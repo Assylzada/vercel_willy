@@ -2,7 +2,7 @@
   "name": "willy-backend",
   "version": "1.0.0",
   "description": "Backend for Willy Wonka project",
-  "main": "src/server.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node server.js",
