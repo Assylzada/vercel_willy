@@ -4,14 +4,14 @@ dotenv.config();
 import express from "express";
 import cors from "cors";
 
-import connectDB from "./src/config/db.js";
-import errorHandler from "./src/middleware/error.middleware.js";
+import connectDB from "./config/db.js";
+import errorHandler from "./middleware/error.middleware.js";
 
-import authRoutes from "./src/routes/auth.routes.js";
-import contactRoutes from "./src/routes/contact.routes.js";
-import ticketRoutes from "./src/routes/ticket.routes.js";
-import orderRoutes from "./src/routes/order.routes.js";
-import subRoutes from "./src/routes/sub.routes.js";
+import authRoutes from "./routes/auth.routes.js";
+import contactRoutes from "./routes/contact.routes.js";
+import ticketRoutes from "./routes/ticket.routes.js";
+import orderRoutes from "./routes/order.routes.js";
+import subRoutes from "./routes/sub.routes.js";
 
 const app = express();
 
