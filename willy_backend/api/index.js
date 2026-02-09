@@ -8,26 +8,20 @@ import contactRoutes from "../routes/contact.routes.js";
 
 dotenv.config();
 
+// Сразу подключаемся к БД (Vercel кэширует соединение)
+connectDB();
+
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ================= Routes =================
+// Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/contact", contactRoutes);
 
-// ================= Health check =================
 app.get("/", (req, res) => {
   res.status(200).json({ message: "API is running on Vercel 🚀" });
 });
 
-// ================= DB connection for serverless =================
-let isDBConnected = false;
-
-export default async function handler(req, res) {
-  if (!isDBConnected) {
-    await connectDB();
-    isDBConnected = true;
-  }
-  app(req, res);
-}
+// ГЛАВНОЕ: Экспортируем именно app
+export default app;
