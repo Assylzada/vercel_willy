@@ -2,10 +2,11 @@
   "name": "willy-backend",
   "version": "1.0.0",
   "description": "Backend for Willy Wonka project",
-  "main": "server.js",
+  "main": "src/server.js",
   "type": "module",
   "scripts": {
-    "dev": "node api/index.js"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +24,3 @@
     "nodemon": "^3.1.11"
   }
 }
-
-
-
